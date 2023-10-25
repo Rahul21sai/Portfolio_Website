@@ -1,3 +1,5 @@
+Welcome to my portfolio! This project showcases my skills, projects, and experiences as a web developer.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
