@@ -364,7 +364,7 @@ export const Bio = {
       description:
         "Designing a portfolio website using react js",
       image:
-        "../images/portfolio.png",
+        "https://user-images.githubusercontent.com/110412514/279146337-6f790da5-191e-48d1-a91f-9879806bae18.png",
       tags: [
         "React Js",
         "Html &css",
@@ -372,8 +372,8 @@ export const Bio = {
         "Github",
       ],
       category: "web app",
-      github: "https://github.com/rishavchanda/Trackify",
-      webapp: "https://trackify.duckdns.org",
+      github: "https://github.com/Rahul21sai/Portfolio_Website",
+      webapp: "https://portfolio-website-ochre-iota.vercel.app/",
     },
     // {
     //   id: 0,
@@ -409,7 +409,7 @@ export const Bio = {
       description:
         "As part of my web development journey, I recently completed a project on creating a Netflix clone using HTML and CSS. The project involved creating a responsive web page that looked similar to the Netflix home page. It was an excellent opportunity to learn about web development tools such as Visual Studio Code,",
       image:
-        "",
+        "https://user-images.githubusercontent.com/110412514/279148569-35dab65b-518e-4142-bf59-30427522de8c.png",
       tags: [
         " Java script",
         "Html",
