@@ -261,12 +261,12 @@ export const Bio = {
     // },
     {
       id: 1,
-      img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/flipr.jpeg?alt=media&token=1d72532a-45eb-4c1a-a81a-c9bed9fec543",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/AWS_Simple_Icons_AWS_Cloud.svg/1024px-AWS_Simple_Icons_AWS_Cloud.svg.png",
       role: "AWS cloud Parctitioner",
       company: "Amazon Web Services",
       date: "Aug 2023 - Dec 2023",
       desc: "Learning the cloud essentials and serivces provided by the AWS",
-      doc: "aws.png",
+      doc: "./aws.jpg",
 
       skills: [
         // "ReactJS",
