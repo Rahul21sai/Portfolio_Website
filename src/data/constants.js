@@ -37,7 +37,8 @@ export const skills = [
       },
       {
         name: "AWS cloud Practitioner",
-        image: "",
+        image:
+          "https://github.com/Rahul21sai/Portfolio_Website/assets/110412514/cf1aeeaa-6e8f-406b-8171-8cfaeaeb1474",
       },
       {
         name: "Android Studio",
@@ -364,6 +365,43 @@ export const education = [
 
 export const projects = [
   {
+    id: 10,
+    title: "BID_BAY-An Ecommerce & Auction Platform",
+    date: "Nov 2023 - Dec 2023",
+    description:
+      "🛒 BID_BAY: An Ecommerce & Auction Platform built with MERN Stack BID_BAY, a feature-rich Ecommerce and Auction Platform developed using the MERN (MongoDB, Express.js, React.js, Node.js) stack. 🚀hance my skills in full-stack development, real-time functionality, and responsive design.",
+
+    image:
+      " https://github.com/Rahul21sai/BidBay_mern/assets/110412514/7917bacb-a93f-4985-8c88-c7fd4d421adb",
+    tags: [
+      "React Js",
+      "Node Js",
+      "Mongodb",
+      "Express Js",
+      "MERN Stack",
+      "Git",
+      "Github",
+    ],
+    category: "web app",
+    github: "https://github.com/Rahul21sai/BID_BAY",
+    webapp: "https://bid-bay.vercel.app/",
+    member: [
+      {
+        name: "V Naga Sai Rahul",
+        img: "../images/HeroImage.jpg",
+        linkedin:
+          "https://www.linkedin.com/in/naga-sai-rahul-vudumula-93419524b",
+        github: "https://github.com/Rahul21sai/",
+      },
+      {
+        name: "Vishnu Priya",
+        img: "",
+        linkedin: "linkedin.com/in/vishnu-priya-738029230",
+        github: "https://github.com/vishnu-priya59/",
+      },
+    ],
+  },
+  {
     id: 9,
     title: "Portfolio",
     date: "Oct 2023 - Nov 2023",
@@ -387,20 +425,20 @@ export const projects = [
   //   category: "web app",
   //   github: "https://github.com/rishavchanda/Podstream",
   //   webapp: "https://podstream.netlify.app/",
-  //   member: [
-  //     {
-  //       name: "Rishav Chanda",
-  //       img: "https://avatars.githubusercontent.com/u/64485885?v=4",
-  //       linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-  //       github: "https://github.com/rishavchanda/",
-  //     },
-  //     {
-  //       name: "Upasana Chaudhuri",
-  //       img: "https://avatars.githubusercontent.com/u/100614635?v=4",
-  //       linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-  //       github: "https://github.com/upasana0710",
-  //     },
-  //   ],
+  // member: [
+  //   {
+  //     name: "Rishav Chanda",
+  //     img: "https://avatars.githubusercontent.com/u/64485885?v=4",
+  //     linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
+  //     github: "https://github.com/rishavchanda/",
+  //   },
+  //   {
+  //     name: "Upasana Chaudhuri",
+  //     img: "https://avatars.githubusercontent.com/u/100614635?v=4",
+  //     linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
+  //     github: "https://github.com/upasana0710",
+  //   },
+  // ],
   // },
   {
     id: 1,
@@ -565,8 +603,8 @@ export const projects = [
       "https://media.licdn.com/dms/image/D4D12AQFcqXuUKAq68g/article-cover_image-shrink_600_2000/0/1686287661420?e=2147483647&v=beta&t=rgvuNTarPWthtcPydVAfkFpI4Jkr9L6Ed_tkF2PnNiE",
     tags: ["Python", "Keras", "TensorFlow", "Pandas", "Pickle", "React"],
     category: "machine learning",
-    github: "",
-    webapp: "",
+    github: "https://github.com/Rahul21sai/Anime_imageGenration_Using_GenerativeAdversialNetwork",
+    webapp: "https://github.com/Rahul21sai/Anime_imageGenration_Using_GenerativeAdversialNetwork",
   },
   {
     id: 6,
