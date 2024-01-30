@@ -411,7 +411,7 @@ export const projects = [
     tags: ["React Js", "Html &css", "Git", "Github"],
     category: "web app",
     github: "https://github.com/Rahul21sai/Portfolio_Website",
-    webapp: "https://portfolio-website-ochre-iota.vercel.app/",
+    webapp: "https://portfolio-website-rosy-nu.vercel.app/",
   },
   // {
   //   id: 0,
