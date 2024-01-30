@@ -10,7 +10,7 @@ export const Bio = {
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
   github: "https://github.com/Rahul21sai",
   resume:
-    "https://drive.google.com/file/d/1mbJF7sc_ML1mV7EK1XNKoLxBpW4mLT2E/view?usp=sharing",
+    "https://drive.google.com/file/d/1JwSJ28I3QwVppk5lC8SDmc5PNNXF9nDq/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/naga-sai-rahul-vudumula-93419524b",
   twitter: "",
   insta: "https://instagram.com/_naga_sai_rahul_?igshid=MzMyNGUyNmU2YQ==",
@@ -274,7 +274,7 @@ export const experiences = [
     company: "Amazon Web Services",
     date: "Aug 2023 - Dec 2023",
     desc: "Learning the cloud essentials and serivces provided by the AWS",
-    doc: "https://github.com/Rahul21sai/Portfolio_Website/assets/110412514/cf1aeeaa-6e8f-406b-8171-8cfaeaeb1474",
+    doc: "https://drive.google.com/file/d/1RJP07CP4AI3HJk-wj0E9kKEVTqnb-v0S/view?usp=sharing",
 
     skills: [
       // "ReactJS",
@@ -339,7 +339,7 @@ export const education = [
     img: "https://th.bing.com/th/id/OIP.T0p3jImU5qsrUvEKXA3VpQHaHa?pid=ImgDet&rs=1",
     school: "Vellore Institute of Technology, Amaravathi",
     date: "Dec 2021 - Sep 2025",
-    grade: "8.83 CGPA",
+    grade: "8.85 CGPA",
     desc: "I am currently pursuing a Bachelor's degree in Computer Science and Engineering at Vellore Institute of Technology, Amaravathi. I have completed 5 semesters and have a CGPA of 8.83. I have taken courses in Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Computer Networks, among others.",
     degree: "Bachelor of Technology - BTech, Computer Science and Engineering",
   },
