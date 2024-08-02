@@ -10,7 +10,7 @@ export const Bio = {
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
   github: "https://github.com/Rahul21sai",
   resume:
-    "https://drive.google.com/file/d/1KcnE4di0OsOX_7Q_hKr2HSZH8J8nyfSg/view?usp=sharing",
+    "https://drive.google.com/file/d/1Jw3b3OUCniJP9rTGTZ05t-nz08IOLvws/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/naga-sai-rahul-vudumula-93419524b",
   twitter: "",
   insta: "https://instagram.com/_naga_sai_rahul_?igshid=MzMyNGUyNmU2YQ==",
