@@ -25,15 +25,39 @@ export const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
 
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
+    try {
+      // Send form data to Formspree
+      const response = await fetch('https://formspree.io/f/xzdyynza', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email, // Formspree will use this for reply-to
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } finally {
       setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    }, 1500);
+    }
   };
 
   return (
@@ -154,14 +178,24 @@ export const Contact = () => {
                 </button>
               </MagneticButton>
 
-              {/* Status Message */}
+              {/* Status Messages */}
               {submitStatus === 'success' && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-500 text-center"
                 >
-                  Message sent successfully! I'll get back to you soon.
+                  ✓ Message sent successfully! I'll get back to you soon.
+                </motion.div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-500 text-center"
+                >
+                  ✗ Failed to send message. Please try again or email me directly.
                 </motion.div>
               )}
             </form>
