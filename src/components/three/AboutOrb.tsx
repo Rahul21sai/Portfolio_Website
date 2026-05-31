@@ -52,7 +52,7 @@ const Orb = ({ isHovered }: { isHovered: boolean }) => {
 
   return (
     <mesh ref={meshRef} scale={isHovered ? 1.2 : 1}>
-      <sphereGeometry args={[1.5, 64, 64]} />
+      <sphereGeometry args={[1.5, 32, 32]} /> {/* Reduced from 64,64 to 32,32 */}
       <MeshDistortMaterial
         color={isHovered ? '#8b5cf6' : '#7c3aed'}
         distort={0.4}
@@ -115,8 +115,10 @@ export const AboutOrb = () => {
     >
       <Canvas
         camera={{ position: [0, 0, 5], fov: 50 }}
-        dpr={[1, 2]}
-        gl={{ antialias: true, alpha: true }}
+        dpr={[1, 1.5]}
+        gl={{ antialias: false, alpha: true, powerPreference: 'high-performance' }}
+        frameloop="demand"
+        performance={{ min: 0.5 }}
       >
         <Scene isHovered={isHovered} />
       </Canvas>

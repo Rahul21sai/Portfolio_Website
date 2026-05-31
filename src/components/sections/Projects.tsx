@@ -36,11 +36,46 @@ export const Projects = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <GlassCard className="h-full p-8 hover:scale-[1.02] transition-transform duration-300">
-                  {/* Project Header */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-display font-bold text-text mb-2">
+                <GlassCard className="h-full overflow-hidden hover:scale-[1.02] transition-transform duration-300 group">
+                  {/* Project Banner/Image */}
+                  <div className="relative h-48 bg-gradient-to-br from-accent-violet/20 via-accent-cyan/10 to-accent-amber/5 overflow-hidden">
+                    {/* Animated gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent-violet/30 to-accent-cyan/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    {/* Project number/icon */}
+                    <div className="absolute top-4 left-4 w-12 h-12 bg-accent-violet/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-accent-violet/30">
+                      <span className="text-accent-violet font-mono font-bold">{String(index + 1).padStart(2, '0')}</span>
+                    </div>
+                    
+                    {/* Badge on banner */}
+                    {project.badge && (
+                      <div className="absolute top-4 right-4">
+                        <span
+                          className={`
+                            px-3 py-1 rounded-full text-xs font-mono backdrop-blur-sm
+                            ${
+                              project.badge.includes('Award') || project.badge.includes('Place')
+                                ? 'bg-accent-amber/30 text-accent-amber border border-accent-amber/50'
+                                : project.badge.includes('Open Source')
+                                ? 'bg-accent-violet/30 text-accent-violet border border-accent-violet/50'
+                                : 'bg-accent-cyan/30 text-accent-cyan border border-accent-cyan/50'
+                            }
+                          `}
+                        >
+                          {project.badge}
+                        </span>
+                      </div>
+                    )}
+                    
+                    {/* Decorative elements */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-violet via-accent-cyan to-accent-amber" />
+                  </div>
+
+                  {/* Project Content */}
+                  <div className="p-8">
+                    {/* Project Header */}
+                    <div className="mb-4">
+                      <h3 className="text-2xl font-display font-bold text-text mb-2 group-hover:text-accent-violet transition-colors">
                         {project.title}
                       </h3>
                       <div className="flex items-center gap-2 text-sm text-text-muted">
@@ -49,71 +84,50 @@ export const Projects = () => {
                         <span>{project.date}</span>
                       </div>
                     </div>
-                    
-                    {/* Badge */}
-                    {project.badge && (
-                      <span
-                        className={`
-                          px-3 py-1 rounded-full text-xs font-mono
-                          ${
-                            project.badge.includes('Award')
-                              ? 'bg-accent-amber/20 text-accent-amber border border-accent-amber/30'
-                              : project.badge.includes('Open Source')
-                              ? 'bg-accent-violet/20 text-accent-violet border border-accent-violet/30'
-                              : 'bg-accent-cyan/20 text-accent-cyan border border-accent-cyan/30'
-                          }
-                        `}
-                      >
-                        {project.badge}
-                      </span>
-                    )}
+
+                    {/* Description */}
+                    <p className="text-text-muted leading-relaxed mb-6">
+                      {project.description}
+                    </p>
+
+                    {/* Tech Stack Tags */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 bg-accent-violet/10 border border-accent-violet/30 rounded-md text-accent-violet text-xs font-mono hover:bg-accent-violet/20 transition-colors"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Links */}
+                    <div className="flex gap-4 pt-4 border-t border-border">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-text-muted hover:text-accent-violet transition-colors group/link"
+                        >
+                          <Code2 className="w-5 h-5 group-hover/link:scale-110 transition-transform" />
+                          <span className="text-sm font-mono">View Code</span>
+                        </a>
+                      )}
+                      {project.demo && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-text-muted hover:text-accent-cyan transition-colors group/link"
+                        >
+                          <ExternalLink className="w-5 h-5 group-hover/link:scale-110 transition-transform" />
+                          <span className="text-sm font-mono">Live Demo</span>
+                        </a>
+                      )}
+                    </div>
                   </div>
-
-                  {/* Description */}
-                  <p className="text-text-muted leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-
-                  {/* Tech Stack Tags */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-accent-violet/10 border border-accent-violet/30 rounded-md text-accent-violet text-xs font-mono"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex gap-4 pt-4 border-t border-border">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-text-muted hover:text-accent-violet transition-colors group"
-                      >
-                        <Code2 className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                        <span className="text-sm font-mono">View Code</span>
-                      </a>
-                    )}
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-text-muted hover:text-accent-cyan transition-colors group"
-                      >
-                        <ExternalLink className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                        <span className="text-sm font-mono">Live Demo</span>
-                      </a>
-                    )}
-                  </div>
-
-                  {/* Decorative Corner */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-accent-violet/10 to-transparent rounded-bl-full" />
                 </GlassCard>
               </motion.div>
             ))}

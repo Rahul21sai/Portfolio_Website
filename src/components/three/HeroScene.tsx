@@ -11,7 +11,7 @@ const ParticleField = () => {
   
   const particlesGeometry = useMemo(() => {
     const geometry = new THREE.BufferGeometry();
-    const count = 800;
+    const count = 300; // Reduced from 800 for better performance
     const positions = new Float32Array(count * 3);
     
     for (let i = 0; i < count * 3; i++) {
@@ -70,7 +70,7 @@ const Icosahedron = ({ mouseX, mouseY }: { mouseX: number; mouseY: number }) => 
 
   return (
     <mesh ref={meshRef}>
-      <icosahedronGeometry args={[2.5, 0]} />
+      <icosahedronGeometry args={[2.5, 1]} /> {/* Reduced detail from 0 to 1 */}
       <MeshDistortMaterial
         color="#7c3aed"
         wireframe
@@ -102,7 +102,7 @@ const TorusKnot = () => {
 
   return (
     <mesh ref={meshRef}>
-      <torusKnotGeometry args={[0.5, 0.2, 100, 16]} />
+      <torusKnotGeometry args={[0.5, 0.2, 64, 12]} /> {/* Reduced from 100,16 to 64,12 */}
       <meshStandardMaterial
         color="#06b6d4"
         emissive="#06b6d4"
@@ -148,8 +148,10 @@ export const HeroScene = () => {
     <div className="w-full h-full">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 60 }}
-        dpr={[1, 2]}
-        gl={{ antialias: true, alpha: true }}
+        dpr={[1, 1.5]} // Reduced from [1, 2] for better performance
+        gl={{ antialias: false, alpha: true, powerPreference: 'high-performance' }}
+        frameloop="demand" // Only render when needed
+        performance={{ min: 0.5 }} // Adaptive performance
       >
         <Scene />
       </Canvas>

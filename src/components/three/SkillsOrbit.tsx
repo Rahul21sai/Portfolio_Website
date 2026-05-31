@@ -98,7 +98,7 @@ const Scene = ({ skills }: { skills: string[] }) => {
       
       {/* Central Glow */}
       <mesh>
-        <sphereGeometry args={[0.5, 32, 32]} />
+        <sphereGeometry args={[0.5, 16, 16]} /> {/* Reduced from 32,32 to 16,16 */}
         <meshBasicMaterial
           color="#7c3aed"
           transparent
@@ -139,8 +139,10 @@ export const SkillsOrbit = ({ skills }: SkillsOrbitProps) => {
     <div className="w-full h-full">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 60 }}
-        dpr={[1, 2]}
-        gl={{ antialias: true, alpha: true }}
+        dpr={[1, 1.5]}
+        gl={{ antialias: false, alpha: true, powerPreference: 'high-performance' }}
+        frameloop="demand"
+        performance={{ min: 0.5 }}
       >
         <Scene skills={skills} />
       </Canvas>
