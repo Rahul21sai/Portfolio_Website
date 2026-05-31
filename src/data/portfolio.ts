@@ -16,7 +16,7 @@ export const personalData = {
   stats: [
     { label: "CGPA", value: "8.98" },
     { label: "IBM Developer", value: "2025" },
-    { label: "Best Paper Award", value: "ICOECA 2024" },
+    { label: "Prompt Wars", value: "Top 10" },
     { label: "Certifications", value: "3" }
   ],
   
@@ -28,8 +28,8 @@ export const personalData = {
   
   counters: [
     { label: "Years Experience", value: 2, suffix: "+" },
-    { label: "Projects Shipped", value: 4, suffix: "" },
-    { label: "Published Paper", value: 1, suffix: "" },
+    { label: "Projects Shipped", value: 6, suffix: "" },
+    { label: "Hackathon Wins", value: 2, suffix: "" },
     { label: "Certifications", value: 3, suffix: "" }
   ],
   
@@ -56,6 +56,28 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    title: "Prompt Wars Warmup",
+    category: "Competition · AI · Google",
+    date: "2026",
+    description: "Secured 6th place (Top 10) in Google Prompt Wars competition. Built an advanced prompt engineering solution demonstrating expertise in LLM optimization and creative problem-solving.",
+    tags: ["Prompt Engineering", "LLM", "Google AI", "Competition"],
+    github: "https://github.com/Rahul21sai/Prompt-Wars-Warmup",
+    demo: "https://promptwarwarmup-650374470515.europe-west1.run.app/",
+    badge: "🏆 6th Place - Top 10"
+  },
+  {
+    id: 2,
+    title: "ReviewMind",
+    category: "Hackathon · AI · NLP",
+    date: "2026",
+    description: "Top 1000 finalist in OpenAI & Outskill Hackathon. AI-powered review analysis platform using advanced NLP and sentiment analysis to extract insights from customer feedback.",
+    tags: ["Python", "OpenAI", "NLP", "Sentiment Analysis", "Flask"],
+    github: "https://github.com/Rahul21sai/reviewmind",
+    demo: "https://reviewmind-cul5.onrender.com/",
+    badge: "🎯 Top 1000 - OpenAI Hackathon"
+  },
+  {
+    id: 3,
     title: "AEM Orchestrator",
     category: "Enterprise · AI · Java",
     date: "2025",
@@ -64,7 +86,7 @@ export const projects: Project[] = [
     badge: "🏢 Enterprise"
   },
   {
-    id: 2,
+    id: 4,
     title: "Offline RAG System",
     category: "Open Source · LLM · Python",
     date: "2024",
@@ -74,7 +96,7 @@ export const projects: Project[] = [
     badge: "⭐ Open Source"
   },
   {
-    id: 3,
+    id: 5,
     title: "GitGuard",
     category: "Security · CLI · DevTool",
     date: "2024",
@@ -83,7 +105,7 @@ export const projects: Project[] = [
     badge: "🔒 Security Tool"
   },
   {
-    id: 4,
+    id: 6,
     title: "GAN Research",
     category: "AI · Published · Award",
     date: "2024",
