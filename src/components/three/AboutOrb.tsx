@@ -52,7 +52,7 @@ const Orb = ({ isHovered }: { isHovered: boolean }) => {
 
   return (
     <mesh ref={meshRef} scale={isHovered ? 1.2 : 1}>
-      <sphereGeometry args={[1.5, 32, 32]} /> {/* Reduced from 64,64 to 32,32 */}
+      <sphereGeometry args={[1.5, 24, 24]} /> {/* Further reduced to 24,24 */}
       <MeshDistortMaterial
         color={isHovered ? '#8b5cf6' : '#7c3aed'}
         distort={0.4}
@@ -68,7 +68,7 @@ const Orb = ({ isHovered }: { isHovered: boolean }) => {
 
 // Scene Component
 const Scene = ({ isHovered }: { isHovered: boolean }) => {
-  const satelliteCount = 5;
+  const satelliteCount = 3; // Reduced from 5 to 3 satellites
 
   return (
     <>
@@ -115,10 +115,16 @@ export const AboutOrb = () => {
     >
       <Canvas
         camera={{ position: [0, 0, 5], fov: 50 }}
-        dpr={[1, 1.5]}
-        gl={{ antialias: false, alpha: true, powerPreference: 'high-performance' }}
+        dpr={[1, 1]}
+        gl={{
+          antialias: false,
+          alpha: true,
+          powerPreference: 'high-performance',
+          stencil: false,
+          depth: true
+        }}
         frameloop="demand"
-        performance={{ min: 0.5 }}
+        performance={{ min: 0.5, max: 0.8 }}
       >
         <Scene isHovered={isHovered} />
       </Canvas>

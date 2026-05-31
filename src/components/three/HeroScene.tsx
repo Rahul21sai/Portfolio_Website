@@ -11,7 +11,7 @@ const ParticleField = () => {
   
   const particlesGeometry = useMemo(() => {
     const geometry = new THREE.BufferGeometry();
-    const count = 300; // Reduced from 800 for better performance
+    const count = 150; // Further reduced from 300 to 150 for better performance
     const positions = new Float32Array(count * 3);
     
     for (let i = 0; i < count * 3; i++) {
@@ -24,15 +24,8 @@ const ParticleField = () => {
 
   useFrame((state) => {
     if (particlesRef.current) {
+      // Only rotate, removed expensive per-particle animation
       particlesRef.current.rotation.y = state.clock.elapsedTime * 0.05;
-      
-      // Animate particles
-      const positions = particlesRef.current.geometry.attributes.position.array as Float32Array;
-      const time = state.clock.elapsedTime;
-      for (let i = 0; i < positions.length; i += 3) {
-        positions[i + 1] += Math.sin(time + positions[i]) * 0.001;
-      }
-      particlesRef.current.geometry.attributes.position.needsUpdate = true;
     }
   });
 
@@ -70,7 +63,7 @@ const Icosahedron = ({ mouseX, mouseY }: { mouseX: number; mouseY: number }) => 
 
   return (
     <mesh ref={meshRef}>
-      <icosahedronGeometry args={[2.5, 1]} /> {/* Reduced detail from 0 to 1 */}
+      <icosahedronGeometry args={[2.5, 0]} /> {/* Lowest detail for best performance */}
       <MeshDistortMaterial
         color="#7c3aed"
         wireframe
@@ -102,7 +95,7 @@ const TorusKnot = () => {
 
   return (
     <mesh ref={meshRef}>
-      <torusKnotGeometry args={[0.5, 0.2, 64, 12]} /> {/* Reduced from 100,16 to 64,12 */}
+      <torusKnotGeometry args={[0.5, 0.2, 48, 8]} /> {/* Further reduced to 48,8 */}
       <meshStandardMaterial
         color="#06b6d4"
         emissive="#06b6d4"
@@ -148,10 +141,16 @@ export const HeroScene = () => {
     <div className="w-full h-full">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 60 }}
-        dpr={[1, 1.5]} // Reduced from [1, 2] for better performance
-        gl={{ antialias: false, alpha: true, powerPreference: 'high-performance' }}
+        dpr={[1, 1]} // Fixed to 1 for maximum performance
+        gl={{
+          antialias: false,
+          alpha: true,
+          powerPreference: 'high-performance',
+          stencil: false, // Disable stencil buffer
+          depth: true
+        }}
         frameloop="demand" // Only render when needed
-        performance={{ min: 0.5 }} // Adaptive performance
+        performance={{ min: 0.5, max: 0.8 }} // More aggressive performance scaling
       >
         <Scene />
       </Canvas>
